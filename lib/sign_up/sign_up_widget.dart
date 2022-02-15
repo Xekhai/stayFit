@@ -46,7 +46,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(0, 50, 0, 0),
                 child: Text(
                   'Hey there,',
                   textAlign: TextAlign.center,
@@ -453,7 +453,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 20),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
