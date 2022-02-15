@@ -237,7 +237,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                       child: Image.asset(
-                        'assets/images/Status.png',
+                        'assets/images/secStatus.png',
                         width: 100,
                         height: 150,
                         fit: BoxFit.fill,
