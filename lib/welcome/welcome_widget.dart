@@ -35,11 +35,14 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(
-                  'assets/images/welcome.png',
-                  width: MediaQuery.of(context).size.width,
-                  height: 350,
-                  fit: BoxFit.contain,
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 50, 0, 0),
+                  child: Image.asset(
+                    'assets/images/welcome.png',
+                    width: MediaQuery.of(context).size.width,
+                    height: 350,
+                    fit: BoxFit.contain,
+                  ),
                 ),
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 10),
