@@ -1,4 +1,4 @@
-import '../choose_goal/choose_goal_widget.dart';
+import '../dashboard/dashboard_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
@@ -72,7 +72,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                       await Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => ChooseGoalWidget(),
+                          builder: (context) => DashboardWidget(),
                         ),
                       );
                     },
