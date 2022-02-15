@@ -1,27 +1,24 @@
-import '../complete_profile/complete_profile_widget.dart';
-import '../flutter_flow/flutter_flow_checkbox_group.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../login/login_widget.dart';
+import '../sign_up/sign_up_widget.dart';
+import '../welcome/welcome_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SignUpWidget extends StatefulWidget {
-  const SignUpWidget({Key key}) : super(key: key);
+class LoginWidget extends StatefulWidget {
+  const LoginWidget({Key key}) : super(key: key);
 
   @override
-  _SignUpWidgetState createState() => _SignUpWidgetState();
+  _LoginWidgetState createState() => _LoginWidgetState();
 }
 
-class _SignUpWidgetState extends State<SignUpWidget> {
-  List<String> checkboxGroupValues;
+class _LoginWidgetState extends State<LoginWidget> {
   TextEditingController textController1;
   TextEditingController textController2;
-  TextEditingController textController3;
-  TextEditingController textController4;
+  bool passwordVisibility;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -29,8 +26,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
     super.initState();
     textController1 = TextEditingController();
     textController2 = TextEditingController();
-    textController3 = TextEditingController();
-    textController4 = TextEditingController();
+    passwordVisibility = false;
   }
 
   @override
@@ -61,134 +57,12 @@ class _SignUpWidgetState extends State<SignUpWidget> {
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                 child: Text(
-                  'Create an Account ',
+                  'Welcome Back',
                   textAlign: TextAlign.center,
                   style: FlutterFlowTheme.of(context).bodyText1.override(
                         fontFamily: 'Poppins',
                         fontSize: 20,
                       ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 25, 0, 0),
-                child: Container(
-                  width: 100,
-                  decoration: BoxDecoration(
-                    color: Color(0xFFEFEFEF),
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(20, 0, 10, 0),
-                        child: Icon(
-                          Icons.person_outlined,
-                          color: FlutterFlowTheme.of(context).secondaryText,
-                          size: 24,
-                        ),
-                      ),
-                      Expanded(
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 5, 20, 5),
-                          child: TextFormField(
-                            controller: textController1,
-                            obscureText: false,
-                            decoration: InputDecoration(
-                              hintText: 'First Name',
-                              enabledBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0x00000000),
-                                  width: 1,
-                                ),
-                                borderRadius: const BorderRadius.only(
-                                  topLeft: Radius.circular(4.0),
-                                  topRight: Radius.circular(4.0),
-                                ),
-                              ),
-                              focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0x00000000),
-                                  width: 1,
-                                ),
-                                borderRadius: const BorderRadius.only(
-                                  topLeft: Radius.circular(4.0),
-                                  topRight: Radius.circular(4.0),
-                                ),
-                              ),
-                            ),
-                            style:
-                                FlutterFlowTheme.of(context).bodyText1.override(
-                                      fontFamily: 'Poppins',
-                                      color: Color(0xFFB3B3B3),
-                                      fontWeight: FontWeight.normal,
-                                    ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-                child: Container(
-                  width: 100,
-                  decoration: BoxDecoration(
-                    color: Color(0xFFEFEFEF),
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(20, 0, 10, 0),
-                        child: Icon(
-                          Icons.person_outlined,
-                          color: FlutterFlowTheme.of(context).secondaryText,
-                          size: 24,
-                        ),
-                      ),
-                      Expanded(
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 5, 20, 5),
-                          child: TextFormField(
-                            controller: textController2,
-                            obscureText: false,
-                            decoration: InputDecoration(
-                              hintText: 'Last Name',
-                              enabledBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0x00000000),
-                                  width: 1,
-                                ),
-                                borderRadius: const BorderRadius.only(
-                                  topLeft: Radius.circular(4.0),
-                                  topRight: Radius.circular(4.0),
-                                ),
-                              ),
-                              focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0x00000000),
-                                  width: 1,
-                                ),
-                                borderRadius: const BorderRadius.only(
-                                  topLeft: Radius.circular(4.0),
-                                  topRight: Radius.circular(4.0),
-                                ),
-                              ),
-                            ),
-                            style:
-                                FlutterFlowTheme.of(context).bodyText1.override(
-                                      fontFamily: 'Poppins',
-                                      color: Color(0xFFB3B3B3),
-                                      fontWeight: FontWeight.normal,
-                                    ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
                 ),
               ),
               Padding(
@@ -214,7 +88,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(0, 5, 20, 5),
                           child: TextFormField(
-                            controller: textController3,
+                            controller: textController1,
                             obscureText: false,
                             decoration: InputDecoration(
                               hintText: 'Email',
@@ -275,8 +149,8 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(0, 5, 20, 5),
                           child: TextFormField(
-                            controller: textController4,
-                            obscureText: false,
+                            controller: textController2,
+                            obscureText: !passwordVisibility,
                             decoration: InputDecoration(
                               hintText: 'Password',
                               enabledBorder: UnderlineInputBorder(
@@ -299,6 +173,19 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                   topRight: Radius.circular(4.0),
                                 ),
                               ),
+                              suffixIcon: InkWell(
+                                onTap: () => setState(
+                                  () =>
+                                      passwordVisibility = !passwordVisibility,
+                                ),
+                                child: Icon(
+                                  passwordVisibility
+                                      ? Icons.visibility_outlined
+                                      : Icons.visibility_off_outlined,
+                                  color: Color(0xFF757575),
+                                  size: 22,
+                                ),
+                              ),
                             ),
                             style:
                                 FlutterFlowTheme.of(context).bodyText1.override(
@@ -313,23 +200,17 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                   ),
                 ),
               ),
-              FlutterFlowCheckboxGroup(
-                initiallySelected:
-                    checkboxGroupValues != null ? checkboxGroupValues : [],
-                options: [
-                  'By continuing you accept our Privacy Policy \nand Term of Use'
-                ],
-                onChanged: (val) => setState(() => checkboxGroupValues = val),
-                activeColor: FlutterFlowTheme.of(context).primaryColor,
-                checkColor: Colors.white,
-                checkboxBorderColor: Color(0xFF95A1AC),
-                textStyle: FlutterFlowTheme.of(context).bodyText1.override(
-                      fontFamily: 'Poppins',
-                      color: Color(0xFFB3B3B3),
-                      fontSize: 12,
-                      fontWeight: FontWeight.normal,
-                    ),
-                labelPadding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                child: Text(
+                  'Forgot your password?',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: FlutterFlowTheme.of(context).secondaryText,
+                    fontWeight: FontWeight.normal,
+                    fontSize: 12,
+                  ),
+                ),
               ),
               Spacer(),
               FFButtonWidget(
@@ -340,11 +221,11 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                       type: PageTransitionType.bottomToTop,
                       duration: Duration(milliseconds: 300),
                       reverseDuration: Duration(milliseconds: 300),
-                      child: CompleteProfileWidget(),
+                      child: WelcomeWidget(),
                     ),
                   );
                 },
-                text: 'Get Started',
+                text: 'Login',
                 options: FFButtonOptions(
                   width: 315,
                   height: 60,
@@ -460,7 +341,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Already Have an account,',
+                      'Don’t have an account yet?',
                       style: FlutterFlowTheme.of(context).bodyText1.override(
                             fontFamily: 'Poppins',
                             fontWeight: FontWeight.normal,
@@ -471,12 +352,12 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                         await Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => LoginWidget(),
+                            builder: (context) => SignUpWidget(),
                           ),
                         );
                       },
                       child: Text(
-                        ' login',
+                        ' Register',
                         style: FlutterFlowTheme.of(context).bodyText1.override(
                               fontFamily: 'Poppins',
                               color:

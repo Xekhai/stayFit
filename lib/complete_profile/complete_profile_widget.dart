@@ -1,8 +1,8 @@
+import '../choose_goal/choose_goal_widget.dart';
 import '../flutter_flow/flutter_flow_drop_down.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../goal_one/goal_one_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -403,7 +403,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                         await Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => GoalOneWidget(),
+                            builder: (context) => ChooseGoalWidget(),
                           ),
                         );
                       },
