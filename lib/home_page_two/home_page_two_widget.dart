@@ -21,33 +21,34 @@ class _HomePageTwoWidgetState extends State<HomePageTwoWidget> {
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryColor,
-      body: SafeArea(
-        child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
-          child: Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height * 1,
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [Color(0xFF9BC4FF), Color(0xFF93A5FE)],
-                stops: [0, 1],
-                begin: AlignmentDirectional(0, 1),
-                end: AlignmentDirectional(0, -1),
-              ),
+      body: GestureDetector(
+        onTap: () => FocusScope.of(context).unfocus(),
+        child: Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height * 1,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Color(0xFF9BC4FF), Color(0xFF93A5FE)],
+              stops: [0, 1],
+              begin: AlignmentDirectional(0, 1),
+              end: AlignmentDirectional(0, -1),
             ),
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Spacer(),
-                Image.asset(
-                  'assets/images/logo-tagline2.png',
-                  width: 185,
-                  height: 80,
-                  fit: BoxFit.contain,
-                ),
-                Spacer(),
-                FFButtonWidget(
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Spacer(),
+              Image.asset(
+                'assets/images/logo-tagline2.png',
+                width: 185,
+                height: 80,
+                fit: BoxFit.contain,
+              ),
+              Spacer(),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
+                child: FFButtonWidget(
                   onPressed: () async {
                     await Navigator.push(
                       context,
@@ -74,8 +75,8 @@ class _HomePageTwoWidgetState extends State<HomePageTwoWidget> {
                   ),
                   showLoadingIndicator: false,
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

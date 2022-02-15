@@ -69,66 +69,60 @@ class _OnboardOneWidgetState extends State<OnboardOneWidget> {
           ),
         ),
       ),
-      body: SafeArea(
-        child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
-          child: Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height * 1,
-            decoration: BoxDecoration(
-              color: Color(0xFFEEEEEE),
-            ),
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Image.asset(
-                  'assets/images/one.png',
-                  width: MediaQuery.of(context).size.width,
-                  height: 406,
-                  fit: BoxFit.cover,
-                ),
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(20, 50, 20, 0),
+      body: GestureDetector(
+        onTap: () => FocusScope.of(context).unfocus(),
+        child: Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height * 1,
+          decoration: BoxDecoration(
+            color: Color(0xFFEEEEEE),
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Image.asset(
+                'assets/images/one.png',
+                width: MediaQuery.of(context).size.width,
+                fit: BoxFit.fitWidth,
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(20, 50, 20, 0),
+                    child: Text(
+                      'Track Your Goal',
+                      textAlign: TextAlign.start,
+                      style: FlutterFlowTheme.of(context).title3,
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    decoration: BoxDecoration(
+                      color: Color(0xFFEEEEEE),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),
                       child: Text(
-                        'Track Your Goal',
+                        'Don\'t worry if you have trouble determining your goals, We can help you determine your goals and track your goals',
                         textAlign: TextAlign.start,
-                        style: FlutterFlowTheme.of(context).title3,
+                        style: FlutterFlowTheme.of(context).bodyText1.override(
+                              fontFamily: 'Poppins',
+                              color: FlutterFlowTheme.of(context).secondaryText,
+                              fontSize: 12,
+                              fontWeight: FontWeight.normal,
+                            ),
                       ),
                     ),
-                  ],
-                ),
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Container(
-                      width: MediaQuery.of(context).size.width,
-                      decoration: BoxDecoration(
-                        color: Color(0xFFEEEEEE),
-                      ),
-                      child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),
-                        child: Text(
-                          'Don\'t worry if you have trouble determining your goals, We can help you determine your goals and track your goals',
-                          textAlign: TextAlign.start,
-                          style: FlutterFlowTheme.of(context)
-                              .bodyText1
-                              .override(
-                                fontFamily: 'Poppins',
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                fontSize: 12,
-                                fontWeight: FontWeight.normal,
-                              ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
+                  ),
+                ],
+              ),
+            ],
           ),
         ),
       ),

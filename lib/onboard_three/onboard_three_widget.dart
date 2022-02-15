@@ -69,66 +69,60 @@ class _OnboardThreeWidgetState extends State<OnboardThreeWidget> {
           ),
         ),
       ),
-      body: SafeArea(
-        child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
-          child: Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height * 1,
-            decoration: BoxDecoration(
-              color: Color(0xFFEEEEEE),
-            ),
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Image.asset(
-                  'assets/images/three.png',
-                  width: MediaQuery.of(context).size.width,
-                  height: 406,
-                  fit: BoxFit.cover,
-                ),
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(20, 50, 20, 0),
+      body: GestureDetector(
+        onTap: () => FocusScope.of(context).unfocus(),
+        child: Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height * 1,
+          decoration: BoxDecoration(
+            color: Color(0xFFEEEEEE),
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Image.asset(
+                'assets/images/three.png',
+                width: MediaQuery.of(context).size.width,
+                fit: BoxFit.fitWidth,
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(20, 50, 20, 0),
+                    child: Text(
+                      'Eat Well',
+                      textAlign: TextAlign.start,
+                      style: FlutterFlowTheme.of(context).title3,
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    decoration: BoxDecoration(
+                      color: Color(0xFFEEEEEE),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),
                       child: Text(
-                        'Eat Well',
+                        'Let\'s start a healthy lifestyle with us, we can determine your diet every day. healthy eating is fun',
                         textAlign: TextAlign.start,
-                        style: FlutterFlowTheme.of(context).title3,
+                        style: FlutterFlowTheme.of(context).bodyText1.override(
+                              fontFamily: 'Poppins',
+                              color: FlutterFlowTheme.of(context).secondaryText,
+                              fontSize: 12,
+                              fontWeight: FontWeight.normal,
+                            ),
                       ),
                     ),
-                  ],
-                ),
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Container(
-                      width: MediaQuery.of(context).size.width,
-                      decoration: BoxDecoration(
-                        color: Color(0xFFEEEEEE),
-                      ),
-                      child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),
-                        child: Text(
-                          'Let\'s start a healthy lifestyle with us, we can determine your diet every day. healthy eating is fun',
-                          textAlign: TextAlign.start,
-                          style: FlutterFlowTheme.of(context)
-                              .bodyText1
-                              .override(
-                                fontFamily: 'Poppins',
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                fontSize: 12,
-                                fontWeight: FontWeight.normal,
-                              ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
+                  ),
+                ],
+              ),
+            ],
           ),
         ),
       ),

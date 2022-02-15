@@ -21,28 +21,29 @@ class _HomePageWidgetState extends State<HomePageWidget> {
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: Color(0xFFF5F5F5),
-      body: SafeArea(
-        child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
-          child: Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height * 1,
-            decoration: BoxDecoration(
-              color: FlutterFlowTheme.of(context).primaryBackground,
-            ),
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Spacer(),
-                Image.asset(
-                  'assets/images/logo-tagline.png',
-                  width: 185,
-                  height: 80,
-                  fit: BoxFit.contain,
-                ),
-                Spacer(),
-                FFButtonWidget(
+      body: GestureDetector(
+        onTap: () => FocusScope.of(context).unfocus(),
+        child: Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height * 1,
+          decoration: BoxDecoration(
+            color: FlutterFlowTheme.of(context).primaryBackground,
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Spacer(),
+              Image.asset(
+                'assets/images/logo-tagline.png',
+                width: 185,
+                height: 80,
+                fit: BoxFit.contain,
+              ),
+              Spacer(),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
+                child: FFButtonWidget(
                   onPressed: () async {
                     await Navigator.push(
                       context,
@@ -69,8 +70,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   ),
                   showLoadingIndicator: false,
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
