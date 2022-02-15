@@ -1,6 +1,7 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../onboard_one/onboard_one_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -46,8 +47,13 @@ class _HomePageTwoWidgetState extends State<HomePageTwoWidget> {
                 ),
                 Spacer(),
                 FFButtonWidget(
-                  onPressed: () {
-                    print('Button pressed ...');
+                  onPressed: () async {
+                    await Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => OnboardOneWidget(),
+                      ),
+                    );
                   },
                   text: 'Get Started',
                   options: FFButtonOptions(

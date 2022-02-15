@@ -1,3 +1,4 @@
+import '../complete_profile/complete_profile_widget.dart';
 import '../flutter_flow/flutter_flow_checkbox_group.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -336,8 +337,16 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                 ),
                 Spacer(),
                 FFButtonWidget(
-                  onPressed: () {
-                    print('Button pressed ...');
+                  onPressed: () async {
+                    await Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.bottomToTop,
+                        duration: Duration(milliseconds: 300),
+                        reverseDuration: Duration(milliseconds: 300),
+                        child: CompleteProfileWidget(),
+                      ),
+                    );
                   },
                   text: 'Get Started',
                   options: FFButtonOptions(
