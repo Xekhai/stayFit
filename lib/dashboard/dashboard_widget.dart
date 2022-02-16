@@ -1,3 +1,4 @@
+import '../activity_tracker/activity_tracker_widget.dart';
 import '../flutter_flow/flutter_flow_drop_down.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -210,8 +211,14 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                   ),
                             ),
                             FFButtonWidget(
-                              onPressed: () {
-                                print('Button pressed ...');
+                              onPressed: () async {
+                                await Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        ActivityTrackerWidget(),
+                                  ),
+                                );
                               },
                               text: 'Check',
                               options: FFButtonOptions(

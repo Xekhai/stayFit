@@ -42,17 +42,22 @@ class _ActivityTrackerWidgetState extends State<ActivityTrackerWidget> {
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Container(
-                            width: 32,
-                            height: 32,
-                            decoration: BoxDecoration(
-                              color: Color(0xFFEEEEEE),
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: Icon(
-                              Icons.chevron_left_rounded,
-                              color: Colors.black,
-                              size: 24,
+                          InkWell(
+                            onTap: () async {
+                              Navigator.pop(context);
+                            },
+                            child: Container(
+                              width: 32,
+                              height: 32,
+                              decoration: BoxDecoration(
+                                color: Color(0xFFEEEEEE),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: Icon(
+                                Icons.chevron_left_rounded,
+                                color: Colors.black,
+                                size: 24,
+                              ),
                             ),
                           ),
                           Text(
