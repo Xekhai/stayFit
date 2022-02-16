@@ -6,14 +6,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class WelcomeWidget extends StatefulWidget {
-  const WelcomeWidget({Key key}) : super(key: key);
+class CongratulationsWidget extends StatefulWidget {
+  const CongratulationsWidget({Key key}) : super(key: key);
 
   @override
-  _WelcomeWidgetState createState() => _WelcomeWidgetState();
+  _CongratulationsWidgetState createState() => _CongratulationsWidgetState();
 }
 
-class _WelcomeWidgetState extends State<WelcomeWidget> {
+class _CongratulationsWidgetState extends State<CongratulationsWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -38,7 +38,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0, 50, 0, 0),
                   child: Image.asset(
-                    'assets/images/welcome.png',
+                    'assets/images/Frame.png',
                     width: MediaQuery.of(context).size.width,
                     height: 350,
                     fit: BoxFit.contain,
@@ -47,7 +47,8 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 10),
                   child: Text(
-                    'Welcome, Stefani',
+                    'Congratulations, You Have Finished Your Workout',
+                    textAlign: TextAlign.center,
                     style: FlutterFlowTheme.of(context).bodyText1.override(
                           fontFamily: 'Poppins',
                           fontSize: 20,
@@ -55,7 +56,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                   ),
                 ),
                 Text(
-                  'You are all set now, let’s reach your goals together with us',
+                  'Exercises is king and nutrition is queen. Combine the two and you will have a kingdom\n-Jack Lalanne',
                   textAlign: TextAlign.center,
                   style: FlutterFlowTheme.of(context).bodyText1.override(
                         fontFamily: 'Poppins',
@@ -77,7 +78,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                         ),
                       );
                     },
-                    text: 'Go to Home',
+                    text: 'Back to Home',
                     options: FFButtonOptions(
                       width: 315,
                       height: 60,
