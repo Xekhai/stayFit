@@ -10,7 +10,7 @@ import 'profile/profile_widget.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 void main() async {
-  await FlutterFlowTheme.initialize();
+  //await FlutterFlowTheme.initialize();
 
   runApp(MyApp());
 }
@@ -49,7 +49,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(brightness: Brightness.light),
       darkTheme: ThemeData(brightness: Brightness.dark),
       themeMode: _themeMode,
-      home: NavBarPage(),
+      home: HomePageWidget(),
     );
   }
 }
