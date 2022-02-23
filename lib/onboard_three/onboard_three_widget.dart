@@ -43,7 +43,7 @@ class _OnboardThreeWidgetState extends State<OnboardThreeWidget> {
             shape: BoxShape.rectangle,
             border: Border.all(
               color: FlutterFlowTheme.of(context).primaryColor,
-              width: 3,
+              width: 5,
             ),
           ),
           child: Container(
@@ -58,7 +58,7 @@ class _OnboardThreeWidgetState extends State<OnboardThreeWidget> {
               borderRadius: BorderRadius.circular(99),
               border: Border.all(
                 color: FlutterFlowTheme.of(context).primaryBackground,
-                width: 5,
+                width: 2,
               ),
             ),
             child: Icon(

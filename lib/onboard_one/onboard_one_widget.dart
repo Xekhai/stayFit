@@ -43,7 +43,7 @@ class _OnboardOneWidgetState extends State<OnboardOneWidget> {
             shape: BoxShape.rectangle,
             border: Border.all(
               color: FlutterFlowTheme.of(context).primaryColor,
-              width: 3,
+              width: 1,
             ),
           ),
           child: Container(

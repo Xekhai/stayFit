@@ -40,7 +40,7 @@ class _OnboardFourWidgetState extends State<OnboardFourWidget> {
             shape: BoxShape.rectangle,
             border: Border.all(
               color: FlutterFlowTheme.of(context).primaryColor,
-              width: 3,
+              width: 7,
             ),
           ),
           child: Container(
@@ -55,7 +55,7 @@ class _OnboardFourWidgetState extends State<OnboardFourWidget> {
               borderRadius: BorderRadius.circular(99),
               border: Border.all(
                 color: FlutterFlowTheme.of(context).primaryBackground,
-                width: 5,
+                width: 1,
               ),
             ),
             child: Icon(

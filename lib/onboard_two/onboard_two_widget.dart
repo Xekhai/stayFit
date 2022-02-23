@@ -58,7 +58,7 @@ class _OnboardTwoWidgetState extends State<OnboardTwoWidget> {
               borderRadius: BorderRadius.circular(99),
               border: Border.all(
                 color: FlutterFlowTheme.of(context).primaryBackground,
-                width: 5,
+                width: 3,
               ),
             ),
             child: Icon(
