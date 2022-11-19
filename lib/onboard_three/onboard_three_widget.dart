@@ -1,12 +1,11 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
-import '../onboard_four/onboard_four_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class OnboardThreeWidget extends StatefulWidget {
-  const OnboardThreeWidget({Key key}) : super(key: key);
+  const OnboardThreeWidget({Key? key}) : super(key: key);
 
   @override
   _OnboardThreeWidgetState createState() => _OnboardThreeWidgetState();
@@ -21,16 +20,8 @@ class _OnboardThreeWidgetState extends State<OnboardThreeWidget> {
       key: scaffoldKey,
       backgroundColor: Color(0xFFF5F5F5),
       floatingActionButton: FloatingActionButton(
-        onPressed: () async {
-          await Navigator.push(
-            context,
-            PageTransition(
-              type: PageTransitionType.rightToLeft,
-              duration: Duration(milliseconds: 300),
-              reverseDuration: Duration(milliseconds: 300),
-              child: OnboardFourWidget(),
-            ),
-          );
+        onPressed: () {
+          print('FloatingActionButton pressed ...');
         },
         backgroundColor: Colors.white,
         elevation: 8,
@@ -43,7 +34,7 @@ class _OnboardThreeWidgetState extends State<OnboardThreeWidget> {
             shape: BoxShape.rectangle,
             border: Border.all(
               color: FlutterFlowTheme.of(context).primaryColor,
-              width: 5,
+              width: 3,
             ),
           ),
           child: Container(
@@ -58,7 +49,7 @@ class _OnboardThreeWidgetState extends State<OnboardThreeWidget> {
               borderRadius: BorderRadius.circular(99),
               border: Border.all(
                 color: FlutterFlowTheme.of(context).primaryBackground,
-                width: 2,
+                width: 5,
               ),
             ),
             child: Icon(
@@ -112,7 +103,7 @@ class _OnboardThreeWidgetState extends State<OnboardThreeWidget> {
                         'Let\'s start a healthy lifestyle with us, we can determine your diet every day. healthy eating is fun',
                         textAlign: TextAlign.start,
                         style: FlutterFlowTheme.of(context).bodyText1.override(
-                              fontFamily: 'Poppins',
+                              fontFamily: '',
                               color: FlutterFlowTheme.of(context).secondaryText,
                               fontSize: 12,
                               fontWeight: FontWeight.normal,

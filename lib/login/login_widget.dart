@@ -1,24 +1,23 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../sign_up/sign_up_widget.dart';
-import '../welcome/welcome_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LoginWidget extends StatefulWidget {
-  const LoginWidget({Key key}) : super(key: key);
+  const LoginWidget({Key? key}) : super(key: key);
 
   @override
   _LoginWidgetState createState() => _LoginWidgetState();
 }
 
 class _LoginWidgetState extends State<LoginWidget> {
-  TextEditingController textController1;
-  TextEditingController textController2;
-  bool passwordVisibility;
+  TextEditingController? textController1;
+  TextEditingController? textController2;
+
+  late bool passwordVisibility;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -27,6 +26,13 @@ class _LoginWidgetState extends State<LoginWidget> {
     textController1 = TextEditingController();
     textController2 = TextEditingController();
     passwordVisibility = false;
+  }
+
+  @override
+  void dispose() {
+    textController1?.dispose();
+    textController2?.dispose();
+    super.dispose();
   }
 
   @override
@@ -48,7 +54,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                   'Hey there,',
                   textAlign: TextAlign.center,
                   style: FlutterFlowTheme.of(context).bodyText1.override(
-                        fontFamily: 'Poppins',
+                        fontFamily: '',
                         color: FlutterFlowTheme.of(context).secondaryText,
                         fontWeight: FontWeight.normal,
                       ),
@@ -60,7 +66,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                   'Welcome Back',
                   textAlign: TextAlign.center,
                   style: FlutterFlowTheme.of(context).bodyText1.override(
-                        fontFamily: 'Poppins',
+                        fontFamily: '',
                         fontSize: 20,
                       ),
                 ),
@@ -112,13 +118,34 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   topRight: Radius.circular(4.0),
                                 ),
                               ),
+                              errorBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Color(0x00000000),
+                                  width: 1,
+                                ),
+                                borderRadius: const BorderRadius.only(
+                                  topLeft: Radius.circular(4.0),
+                                  topRight: Radius.circular(4.0),
+                                ),
+                              ),
+                              focusedErrorBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Color(0x00000000),
+                                  width: 1,
+                                ),
+                                borderRadius: const BorderRadius.only(
+                                  topLeft: Radius.circular(4.0),
+                                  topRight: Radius.circular(4.0),
+                                ),
+                              ),
                             ),
                             style:
                                 FlutterFlowTheme.of(context).bodyText1.override(
-                                      fontFamily: 'Poppins',
+                                      fontFamily: '',
                                       color: Color(0xFFB3B3B3),
                                       fontWeight: FontWeight.normal,
                                     ),
+                            maxLines: null,
                           ),
                         ),
                       ),
@@ -173,11 +200,32 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   topRight: Radius.circular(4.0),
                                 ),
                               ),
+                              errorBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Color(0x00000000),
+                                  width: 1,
+                                ),
+                                borderRadius: const BorderRadius.only(
+                                  topLeft: Radius.circular(4.0),
+                                  topRight: Radius.circular(4.0),
+                                ),
+                              ),
+                              focusedErrorBorder: UnderlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Color(0x00000000),
+                                  width: 1,
+                                ),
+                                borderRadius: const BorderRadius.only(
+                                  topLeft: Radius.circular(4.0),
+                                  topRight: Radius.circular(4.0),
+                                ),
+                              ),
                               suffixIcon: InkWell(
                                 onTap: () => setState(
                                   () =>
                                       passwordVisibility = !passwordVisibility,
                                 ),
+                                focusNode: FocusNode(skipTraversal: true),
                                 child: Icon(
                                   passwordVisibility
                                       ? Icons.visibility_outlined
@@ -189,10 +237,11 @@ class _LoginWidgetState extends State<LoginWidget> {
                             ),
                             style:
                                 FlutterFlowTheme.of(context).bodyText1.override(
-                                      fontFamily: 'Poppins',
+                                      fontFamily: '',
                                       color: Color(0xFFB3B3B3),
                                       fontWeight: FontWeight.normal,
                                     ),
+                            maxLines: null,
                           ),
                         ),
                       ),
@@ -214,16 +263,8 @@ class _LoginWidgetState extends State<LoginWidget> {
               ),
               Spacer(),
               FFButtonWidget(
-                onPressed: () async {
-                  await Navigator.push(
-                    context,
-                    PageTransition(
-                      type: PageTransitionType.bottomToTop,
-                      duration: Duration(milliseconds: 300),
-                      reverseDuration: Duration(milliseconds: 300),
-                      child: WelcomeWidget(),
-                    ),
-                  );
+                onPressed: () {
+                  print('Button pressed ...');
                 },
                 text: 'Login',
                 options: FFButtonOptions(
@@ -231,7 +272,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                   height: 60,
                   color: FlutterFlowTheme.of(context).primaryColor,
                   textStyle: FlutterFlowTheme.of(context).subtitle2.override(
-                        fontFamily: 'Poppins',
+                        fontFamily: '',
                         color: Colors.white,
                       ),
                   elevation: 4,
@@ -239,7 +280,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                     color: Colors.transparent,
                     width: 1,
                   ),
-                  borderRadius: 99,
                 ),
                 showLoadingIndicator: false,
               ),
@@ -259,7 +299,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                     Text(
                       'Or ',
                       style: FlutterFlowTheme.of(context).bodyText1.override(
-                            fontFamily: 'Poppins',
+                            fontFamily: '',
                             fontWeight: FontWeight.normal,
                           ),
                     ),
@@ -343,28 +383,17 @@ class _LoginWidgetState extends State<LoginWidget> {
                     Text(
                       'Don’t have an account yet?',
                       style: FlutterFlowTheme.of(context).bodyText1.override(
-                            fontFamily: 'Poppins',
+                            fontFamily: '',
                             fontWeight: FontWeight.normal,
                           ),
                     ),
-                    InkWell(
-                      onTap: () async {
-                        await Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => SignUpWidget(),
+                    Text(
+                      ' Register',
+                      style: FlutterFlowTheme.of(context).bodyText1.override(
+                            fontFamily: '',
+                            color: FlutterFlowTheme.of(context).secondaryColor,
+                            fontWeight: FontWeight.normal,
                           ),
-                        );
-                      },
-                      child: Text(
-                        ' Register',
-                        style: FlutterFlowTheme.of(context).bodyText1.override(
-                              fontFamily: 'Poppins',
-                              color:
-                                  FlutterFlowTheme.of(context).secondaryColor,
-                              fontWeight: FontWeight.normal,
-                            ),
-                      ),
                     ),
                   ],
                 ),

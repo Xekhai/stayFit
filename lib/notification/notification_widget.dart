@@ -6,7 +6,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class NotificationWidget extends StatefulWidget {
-  const NotificationWidget({Key key}) : super(key: key);
+  const NotificationWidget({Key? key}) : super(key: key);
 
   @override
   _NotificationWidgetState createState() => _NotificationWidgetState();
@@ -37,22 +37,17 @@ class _NotificationWidgetState extends State<NotificationWidget> {
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          InkWell(
-                            onTap: () async {
-                              Navigator.pop(context);
-                            },
-                            child: Container(
-                              width: 32,
-                              height: 32,
-                              decoration: BoxDecoration(
-                                color: Color(0xFFEEEEEE),
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              child: Icon(
-                                Icons.chevron_left_rounded,
-                                color: Colors.black,
-                                size: 24,
-                              ),
+                          Container(
+                            width: 32,
+                            height: 32,
+                            decoration: BoxDecoration(
+                              color: Color(0xFFEEEEEE),
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Icon(
+                              Icons.chevron_left_rounded,
+                              color: Colors.black,
+                              size: 24,
                             ),
                           ),
                           Text(
@@ -124,7 +119,7 @@ class _NotificationWidgetState extends State<NotificationWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          fontFamily: '',
                                           fontWeight: FontWeight.normal,
                                         ),
                                   ),
@@ -133,7 +128,7 @@ class _NotificationWidgetState extends State<NotificationWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText2
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          fontFamily: '',
                                           fontSize: 12,
                                           fontWeight: FontWeight.normal,
                                         ),
@@ -203,7 +198,7 @@ class _NotificationWidgetState extends State<NotificationWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          fontFamily: '',
                                           fontWeight: FontWeight.normal,
                                         ),
                                   ),
@@ -212,7 +207,7 @@ class _NotificationWidgetState extends State<NotificationWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText2
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          fontFamily: '',
                                           fontSize: 12,
                                           fontWeight: FontWeight.normal,
                                         ),
@@ -282,7 +277,7 @@ class _NotificationWidgetState extends State<NotificationWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          fontFamily: '',
                                           fontWeight: FontWeight.normal,
                                         ),
                                   ),
@@ -291,7 +286,7 @@ class _NotificationWidgetState extends State<NotificationWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText2
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          fontFamily: '',
                                           fontSize: 12,
                                           fontWeight: FontWeight.normal,
                                         ),

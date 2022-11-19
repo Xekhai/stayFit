@@ -1,13 +1,12 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class WelcomeWidget extends StatefulWidget {
-  const WelcomeWidget({Key key}) : super(key: key);
+  const WelcomeWidget({Key? key}) : super(key: key);
 
   @override
   _WelcomeWidgetState createState() => _WelcomeWidgetState();
@@ -49,7 +48,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                   child: Text(
                     'Welcome, Stefani',
                     style: FlutterFlowTheme.of(context).bodyText1.override(
-                          fontFamily: 'Poppins',
+                          fontFamily: '',
                           fontSize: 20,
                         ),
                   ),
@@ -58,7 +57,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                   'You are all set now, let’s reach your goals together with us',
                   textAlign: TextAlign.center,
                   style: FlutterFlowTheme.of(context).bodyText1.override(
-                        fontFamily: 'Poppins',
+                        fontFamily: '',
                         color: FlutterFlowTheme.of(context).secondaryText,
                         fontSize: 12,
                         fontWeight: FontWeight.normal,
@@ -68,14 +67,8 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 30),
                   child: FFButtonWidget(
-                    onPressed: () async {
-                      await Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) =>
-                              NavBarPage(initialPage: 'Dashboard'),
-                        ),
-                      );
+                    onPressed: () {
+                      print('Button pressed ...');
                     },
                     text: 'Go to Home',
                     options: FFButtonOptions(
@@ -84,7 +77,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                       color: FlutterFlowTheme.of(context).primaryColor,
                       textStyle:
                           FlutterFlowTheme.of(context).subtitle2.override(
-                                fontFamily: 'Poppins',
+                                fontFamily: '',
                                 color: Colors.white,
                               ),
                       elevation: 4,
@@ -92,7 +85,6 @@ class _WelcomeWidgetState extends State<WelcomeWidget> {
                         color: Colors.transparent,
                         width: 1,
                       ),
-                      borderRadius: 99,
                     ),
                     showLoadingIndicator: false,
                   ),

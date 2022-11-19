@@ -1,12 +1,11 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
-import '../onboard_three/onboard_three_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class OnboardTwoWidget extends StatefulWidget {
-  const OnboardTwoWidget({Key key}) : super(key: key);
+  const OnboardTwoWidget({Key? key}) : super(key: key);
 
   @override
   _OnboardTwoWidgetState createState() => _OnboardTwoWidgetState();
@@ -21,16 +20,8 @@ class _OnboardTwoWidgetState extends State<OnboardTwoWidget> {
       key: scaffoldKey,
       backgroundColor: Color(0xFFF5F5F5),
       floatingActionButton: FloatingActionButton(
-        onPressed: () async {
-          await Navigator.push(
-            context,
-            PageTransition(
-              type: PageTransitionType.rightToLeft,
-              duration: Duration(milliseconds: 300),
-              reverseDuration: Duration(milliseconds: 300),
-              child: OnboardThreeWidget(),
-            ),
-          );
+        onPressed: () {
+          print('FloatingActionButton pressed ...');
         },
         backgroundColor: Colors.white,
         elevation: 8,
@@ -58,7 +49,7 @@ class _OnboardTwoWidgetState extends State<OnboardTwoWidget> {
               borderRadius: BorderRadius.circular(99),
               border: Border.all(
                 color: FlutterFlowTheme.of(context).primaryBackground,
-                width: 3,
+                width: 5,
               ),
             ),
             child: Icon(
@@ -112,7 +103,7 @@ class _OnboardTwoWidgetState extends State<OnboardTwoWidget> {
                         'Let’s keep burning, to achive yours goals, it hurts only temporarily, if you give up now you will be in pain forever',
                         textAlign: TextAlign.start,
                         style: FlutterFlowTheme.of(context).bodyText1.override(
-                              fontFamily: 'Poppins',
+                              fontFamily: '',
                               color: FlutterFlowTheme.of(context).secondaryText,
                               fontSize: 12,
                               fontWeight: FontWeight.normal,

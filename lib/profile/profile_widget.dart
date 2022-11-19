@@ -1,6 +1,3 @@
-import '../activity_tracker/activity_tracker_widget.dart';
-import '../complete_profile/complete_profile_widget.dart';
-import '../congratulations/congratulations_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
@@ -10,14 +7,14 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ProfileWidget extends StatefulWidget {
-  const ProfileWidget({Key key}) : super(key: key);
+  const ProfileWidget({Key? key}) : super(key: key);
 
   @override
   _ProfileWidgetState createState() => _ProfileWidgetState();
 }
 
 class _ProfileWidgetState extends State<ProfileWidget> {
-  bool switchListTileValue;
+  bool? switchListTileValue;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -42,27 +39,17 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          InkWell(
-                            onTap: () async {
-                              Navigator.pop(context);
-                            },
-                            child: Container(
-                              width: 32,
-                              height: 32,
-                              decoration: BoxDecoration(
-                                color: Color(0xFFEEEEEE),
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              child: InkWell(
-                                onTap: () async {
-                                  Navigator.pop(context);
-                                },
-                                child: Icon(
-                                  Icons.chevron_left_rounded,
-                                  color: Colors.black,
-                                  size: 24,
-                                ),
-                              ),
+                          Container(
+                            width: 32,
+                            height: 32,
+                            decoration: BoxDecoration(
+                              color: Color(0xFFEEEEEE),
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Icon(
+                              Icons.chevron_left_rounded,
+                              color: Colors.black,
+                              size: 24,
                             ),
                           ),
                           Text(
@@ -127,7 +114,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyText2
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        fontFamily: '',
                                         fontWeight: FontWeight.w300,
                                       ),
                                 ),
@@ -136,14 +123,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                           ),
                           Spacer(),
                           FFButtonWidget(
-                            onPressed: () async {
-                              await Navigator.pushAndRemoveUntil(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => CompleteProfileWidget(),
-                                ),
-                                (r) => false,
-                              );
+                            onPressed: () {
+                              print('Button pressed ...');
                             },
                             text: 'Edit',
                             options: FFButtonOptions(
@@ -153,7 +134,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .subtitle2
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    fontFamily: '',
                                     color: Colors.white,
                                     fontSize: 14,
                                   ),
@@ -161,7 +142,6 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                 color: Colors.transparent,
                                 width: 1,
                               ),
-                              borderRadius: 99,
                             ),
                           ),
                         ],
@@ -191,7 +171,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          fontFamily: '',
                                           color: FlutterFlowTheme.of(context)
                                               .primaryColor,
                                         ),
@@ -201,7 +181,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          fontFamily: '',
                                           fontWeight: FontWeight.normal,
                                         ),
                                   ),
@@ -227,7 +207,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          fontFamily: '',
                                           color: FlutterFlowTheme.of(context)
                                               .primaryColor,
                                         ),
@@ -237,7 +217,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          fontFamily: '',
                                           fontWeight: FontWeight.normal,
                                         ),
                                   ),
@@ -263,7 +243,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          fontFamily: '',
                                           color: FlutterFlowTheme.of(context)
                                               .primaryColor,
                                         ),
@@ -273,7 +253,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          fontFamily: '',
                                           fontWeight: FontWeight.normal,
                                         ),
                                   ),
@@ -330,7 +310,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyText1
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            fontFamily: '',
                                             fontWeight: FontWeight.normal,
                                           ),
                                     ),
@@ -373,7 +353,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyText1
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            fontFamily: '',
                                             fontWeight: FontWeight.normal,
                                           ),
                                     ),
@@ -394,108 +374,86 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                             Padding(
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-                              child: InkWell(
-                                onTap: () async {
-                                  await Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) =>
-                                          ActivityTrackerWidget(),
+                              child: Container(
+                                width: double.infinity,
+                                height: 30,
+                                decoration: BoxDecoration(),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          20, 0, 10, 0),
+                                      child: FaIcon(
+                                        FontAwesomeIcons.chartPie,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryColor,
+                                        size: 24,
+                                      ),
                                     ),
-                                  );
-                                },
-                                child: Container(
-                                  width: double.infinity,
-                                  height: 30,
-                                  decoration: BoxDecoration(),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            20, 0, 10, 0),
-                                        child: FaIcon(
-                                          FontAwesomeIcons.chartPie,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryColor,
-                                          size: 24,
-                                        ),
+                                    Text(
+                                      'Activity History ',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText1
+                                          .override(
+                                            fontFamily: '',
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                    ),
+                                    Spacer(),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          20, 0, 20, 0),
+                                      child: Icon(
+                                        Icons.chevron_right,
+                                        color: Color(0xFFD0D0D0),
+                                        size: 24,
                                       ),
-                                      Text(
-                                        'Activity History ',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyText1
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              fontWeight: FontWeight.normal,
-                                            ),
-                                      ),
-                                      Spacer(),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            20, 0, 20, 0),
-                                        child: Icon(
-                                          Icons.chevron_right,
-                                          color: Color(0xFFD0D0D0),
-                                          size: 24,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ),
                             Padding(
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(0, 10, 0, 20),
-                              child: InkWell(
-                                onTap: () async {
-                                  await Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) =>
-                                          CongratulationsWidget(),
+                              child: Container(
+                                width: double.infinity,
+                                height: 30,
+                                decoration: BoxDecoration(),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          20, 0, 10, 0),
+                                      child: Icon(
+                                        Icons.graphic_eq_rounded,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryColor,
+                                        size: 24,
+                                      ),
                                     ),
-                                  );
-                                },
-                                child: Container(
-                                  width: double.infinity,
-                                  height: 30,
-                                  decoration: BoxDecoration(),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            20, 0, 10, 0),
-                                        child: Icon(
-                                          Icons.graphic_eq_rounded,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryColor,
-                                          size: 24,
-                                        ),
+                                    Text(
+                                      'Workout Progress',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText1
+                                          .override(
+                                            fontFamily: '',
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                    ),
+                                    Spacer(),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          20, 0, 20, 0),
+                                      child: Icon(
+                                        Icons.chevron_right,
+                                        color: Color(0xFFD0D0D0),
+                                        size: 24,
                                       ),
-                                      Text(
-                                        'Workout Progress',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyText1
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              fontWeight: FontWeight.normal,
-                                            ),
-                                      ),
-                                      Spacer(),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            20, 0, 20, 0),
-                                        child: Icon(
-                                          Icons.chevron_right,
-                                          color: Color(0xFFD0D0D0),
-                                          size: 24,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ),
@@ -551,7 +509,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyText1
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              fontFamily: '',
                                               fontWeight: FontWeight.normal,
                                             ),
                                       ),
@@ -559,9 +517,10 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                       Expanded(
                                         child: SwitchListTile(
                                           value: switchListTileValue ??= true,
-                                          onChanged: (newValue) => setState(
-                                              () => switchListTileValue =
-                                                  newValue),
+                                          onChanged: (newValue) async {
+                                            setState(() => switchListTileValue =
+                                                newValue!);
+                                          },
                                           tileColor: Color(0xFFF5F5F5),
                                           dense: false,
                                           controlAffinity:
@@ -623,7 +582,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyText1
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            fontFamily: '',
                                             fontWeight: FontWeight.normal,
                                           ),
                                     ),
@@ -666,7 +625,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyText1
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            fontFamily: '',
                                             fontWeight: FontWeight.normal,
                                           ),
                                     ),
@@ -712,7 +671,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyText1
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              fontFamily: '',
                                               fontWeight: FontWeight.normal,
                                             ),
                                       ),

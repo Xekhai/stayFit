@@ -1,16 +1,17 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:stay_fit/home_page/home_page_widget.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
+import 'flutter_flow/flutter_flow_util.dart';
 import 'flutter_flow/internationalization.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'dashboard/dashboard_widget.dart';
-import 'profile/profile_widget.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'index.dart';
 
 void main() async {
-  //await FlutterFlowTheme.initialize();
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await FlutterFlowTheme.initialize();
 
   runApp(MyApp());
 }
@@ -21,14 +22,17 @@ class MyApp extends StatefulWidget {
   State<MyApp> createState() => _MyAppState();
 
   static _MyAppState of(BuildContext context) =>
-      context.findAncestorStateOfType<_MyAppState>();
+      context.findAncestorStateOfType<_MyAppState>()!;
 }
 
 class _MyAppState extends State<MyApp> {
-  Locale _locale;
+  Locale? _locale;
   ThemeMode _themeMode = FlutterFlowTheme.themeMode;
 
-  void setLocale(Locale value) => setState(() => _locale = value);
+  void setLocale(String language) {
+    setState(() => _locale = createLocale(language));
+  }
+
   void setThemeMode(ThemeMode mode) => setState(() {
         _themeMode = mode;
         FlutterFlowTheme.saveThemeMode(mode);
@@ -55,9 +59,10 @@ class _MyAppState extends State<MyApp> {
 }
 
 class NavBarPage extends StatefulWidget {
-  NavBarPage({Key key, this.initialPage}) : super(key: key);
+  NavBarPage({Key? key, this.initialPage, this.page}) : super(key: key);
 
-  final String initialPage;
+  final String? initialPage;
+  final Widget? page;
 
   @override
   _NavBarPageState createState() => _NavBarPageState();
@@ -65,12 +70,14 @@ class NavBarPage extends StatefulWidget {
 
 /// This is the private State class that goes with NavBarPage.
 class _NavBarPageState extends State<NavBarPage> {
-  String _currentPage = 'Dashboard';
+  String _currentPageName = 'Dashboard';
+  late Widget? _currentPage;
 
   @override
   void initState() {
     super.initState();
-    _currentPage = widget.initialPage ?? _currentPage;
+    _currentPageName = widget.initialPage ?? _currentPageName;
+    _currentPage = widget.page;
   }
 
   @override
@@ -79,12 +86,15 @@ class _NavBarPageState extends State<NavBarPage> {
       'Dashboard': DashboardWidget(),
       'Profile': ProfileWidget(),
     };
-    final currentIndex = tabs.keys.toList().indexOf(_currentPage);
+    final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
     return Scaffold(
-      body: tabs[_currentPage],
+      body: _currentPage ?? tabs[_currentPageName],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
-        onTap: (i) => setState(() => _currentPage = tabs.keys.toList()[i]),
+        onTap: (i) => setState(() {
+          _currentPage = null;
+          _currentPageName = tabs.keys.toList()[i];
+        }),
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         selectedItemColor: FlutterFlowTheme.of(context).primaryColor,
         unselectedItemColor: FlutterFlowTheme.of(context).alternate,

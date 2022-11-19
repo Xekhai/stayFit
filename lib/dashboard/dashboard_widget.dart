@@ -1,23 +1,21 @@
-import '../activity_tracker/activity_tracker_widget.dart';
 import '../flutter_flow/flutter_flow_drop_down.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../notification/notification_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 class DashboardWidget extends StatefulWidget {
-  const DashboardWidget({Key key}) : super(key: key);
+  const DashboardWidget({Key? key}) : super(key: key);
 
   @override
   _DashboardWidgetState createState() => _DashboardWidgetState();
 }
 
 class _DashboardWidgetState extends State<DashboardWidget> {
-  String dropDownValue;
+  String? dropDownValue;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -54,7 +52,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyText2
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      fontFamily: '',
                                       fontWeight: FontWeight.normal,
                                     ),
                               ),
@@ -65,27 +63,17 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                             ),
                           ],
                         ),
-                        InkWell(
-                          onTap: () async {
-                            await Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => NotificationWidget(),
-                              ),
-                            );
-                          },
-                          child: Container(
-                            width: 40,
-                            height: 40,
-                            decoration: BoxDecoration(
-                              color: Color(0xFFD3D3D3),
-                              borderRadius: BorderRadius.circular(14),
-                            ),
-                            child: Icon(
-                              Icons.notifications_none,
-                              color: Colors.black,
-                              size: 24,
-                            ),
+                        Container(
+                          width: 40,
+                          height: 40,
+                          decoration: BoxDecoration(
+                            color: Color(0xFFD3D3D3),
+                            borderRadius: BorderRadius.circular(14),
+                          ),
+                          child: Icon(
+                            Icons.notifications_none,
+                            color: Colors.black,
+                            size: 24,
                           ),
                         ),
                       ],
@@ -133,7 +121,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          fontFamily: '',
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryBackground,
                                         ),
@@ -143,7 +131,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          fontFamily: '',
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBackground,
                                           fontSize: 12,
@@ -163,7 +151,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .subtitle2
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            fontFamily: '',
                                             color: Colors.white,
                                             fontSize: 14,
                                             fontWeight: FontWeight.normal,
@@ -172,7 +160,6 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                         color: Colors.transparent,
                                         width: 1,
                                       ),
-                                      borderRadius: 12,
                                     ),
                                   ),
                                 ],
@@ -206,19 +193,13 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyText1
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    fontFamily: '',
                                     fontWeight: FontWeight.normal,
                                   ),
                             ),
                             FFButtonWidget(
-                              onPressed: () async {
-                                await Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        ActivityTrackerWidget(),
-                                  ),
-                                );
+                              onPressed: () {
+                                print('Button pressed ...');
                               },
                               text: 'Check',
                               options: FFButtonOptions(
@@ -229,7 +210,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                 textStyle: FlutterFlowTheme.of(context)
                                     .subtitle2
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      fontFamily: '',
                                       color: Colors.white,
                                       fontSize: 12,
                                       fontWeight: FontWeight.normal,
@@ -238,7 +219,6 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                   color: Colors.transparent,
                                   width: 1,
                                 ),
-                                borderRadius: 12,
                               ),
                             ),
                           ],
@@ -318,7 +298,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyText1
                                                 .override(
-                                                  fontFamily: 'Poppins',
+                                                  fontFamily: '',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryColor,
@@ -372,7 +352,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyText1
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                fontFamily: '',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryColor,
@@ -399,7 +379,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyText1
                                                         .override(
-                                                          fontFamily: 'Poppins',
+                                                          fontFamily: '',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryColor,
@@ -443,9 +423,9 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                               ),
                               borderRadius: BorderRadius.circular(50),
                             ),
-                            child: FlutterFlowDropDown(
+                            child: FlutterFlowDropDown<String>(
                               initialOption: dropDownValue ??= 'Weekly',
-                              options: ['Weekly'].toList(),
+                              options: ['Weekly'],
                               onChanged: (val) =>
                                   setState(() => dropDownValue = val),
                               width: 76,
@@ -453,7 +433,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .bodyText1
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    fontFamily: '',
                                     color: Colors.white,
                                     fontWeight: FontWeight.normal,
                                   ),
@@ -537,7 +517,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          fontFamily: '',
                                           color: Color(0xFFB3B3B3),
                                           fontSize: 12,
                                           fontWeight: FontWeight.normal,
@@ -633,7 +613,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          fontFamily: '',
                                           color: Color(0xFFB3B3B3),
                                           fontSize: 12,
                                           fontWeight: FontWeight.normal,
@@ -729,7 +709,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          fontFamily: '',
                                           color: Color(0xFFB3B3B3),
                                           fontSize: 12,
                                           fontWeight: FontWeight.normal,

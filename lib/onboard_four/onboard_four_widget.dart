@@ -1,12 +1,11 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
-import '../sign_up/sign_up_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class OnboardFourWidget extends StatefulWidget {
-  const OnboardFourWidget({Key key}) : super(key: key);
+  const OnboardFourWidget({Key? key}) : super(key: key);
 
   @override
   _OnboardFourWidgetState createState() => _OnboardFourWidgetState();
@@ -21,13 +20,8 @@ class _OnboardFourWidgetState extends State<OnboardFourWidget> {
       key: scaffoldKey,
       backgroundColor: Color(0xFFF5F5F5),
       floatingActionButton: FloatingActionButton(
-        onPressed: () async {
-          await Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => SignUpWidget(),
-            ),
-          );
+        onPressed: () {
+          print('FloatingActionButton pressed ...');
         },
         backgroundColor: Colors.white,
         elevation: 8,
@@ -40,7 +34,7 @@ class _OnboardFourWidgetState extends State<OnboardFourWidget> {
             shape: BoxShape.rectangle,
             border: Border.all(
               color: FlutterFlowTheme.of(context).primaryColor,
-              width: 7,
+              width: 3,
             ),
           ),
           child: Container(
@@ -55,7 +49,7 @@ class _OnboardFourWidgetState extends State<OnboardFourWidget> {
               borderRadius: BorderRadius.circular(99),
               border: Border.all(
                 color: FlutterFlowTheme.of(context).primaryBackground,
-                width: 1,
+                width: 5,
               ),
             ),
             child: Icon(
@@ -109,7 +103,7 @@ class _OnboardFourWidgetState extends State<OnboardFourWidget> {
                         'Improve the quality of your sleep with us, good quality sleep can bring a good mood in the morning',
                         textAlign: TextAlign.start,
                         style: FlutterFlowTheme.of(context).bodyText1.override(
-                              fontFamily: 'Poppins',
+                              fontFamily: '',
                               color: FlutterFlowTheme.of(context).secondaryText,
                               fontSize: 12,
                               fontWeight: FontWeight.normal,

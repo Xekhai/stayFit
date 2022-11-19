@@ -1,13 +1,12 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CongratulationsWidget extends StatefulWidget {
-  const CongratulationsWidget({Key key}) : super(key: key);
+  const CongratulationsWidget({Key? key}) : super(key: key);
 
   @override
   _CongratulationsWidgetState createState() => _CongratulationsWidgetState();
@@ -50,7 +49,7 @@ class _CongratulationsWidgetState extends State<CongratulationsWidget> {
                     'Congratulations, You Have Finished Your Workout',
                     textAlign: TextAlign.center,
                     style: FlutterFlowTheme.of(context).bodyText1.override(
-                          fontFamily: 'Poppins',
+                          fontFamily: '',
                           fontSize: 20,
                         ),
                   ),
@@ -59,7 +58,7 @@ class _CongratulationsWidgetState extends State<CongratulationsWidget> {
                   'Exercises is king and nutrition is queen. Combine the two and you will have a kingdom\n-Jack Lalanne',
                   textAlign: TextAlign.center,
                   style: FlutterFlowTheme.of(context).bodyText1.override(
-                        fontFamily: 'Poppins',
+                        fontFamily: '',
                         color: FlutterFlowTheme.of(context).secondaryText,
                         fontSize: 12,
                         fontWeight: FontWeight.normal,
@@ -69,14 +68,8 @@ class _CongratulationsWidgetState extends State<CongratulationsWidget> {
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 30),
                   child: FFButtonWidget(
-                    onPressed: () async {
-                      await Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) =>
-                              NavBarPage(initialPage: 'Dashboard'),
-                        ),
-                      );
+                    onPressed: () {
+                      print('Button pressed ...');
                     },
                     text: 'Back to Home',
                     options: FFButtonOptions(
@@ -85,7 +78,7 @@ class _CongratulationsWidgetState extends State<CongratulationsWidget> {
                       color: FlutterFlowTheme.of(context).primaryColor,
                       textStyle:
                           FlutterFlowTheme.of(context).subtitle2.override(
-                                fontFamily: 'Poppins',
+                                fontFamily: '',
                                 color: Colors.white,
                               ),
                       elevation: 4,
@@ -93,7 +86,6 @@ class _CongratulationsWidgetState extends State<CongratulationsWidget> {
                         color: Colors.transparent,
                         width: 1,
                       ),
-                      borderRadius: 99,
                     ),
                     showLoadingIndicator: false,
                   ),

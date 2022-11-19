@@ -1,20 +1,19 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../welcome/welcome_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ChooseGoalWidget extends StatefulWidget {
-  const ChooseGoalWidget({Key key}) : super(key: key);
+  const ChooseGoalWidget({Key? key}) : super(key: key);
 
   @override
   _ChooseGoalWidgetState createState() => _ChooseGoalWidgetState();
 }
 
 class _ChooseGoalWidgetState extends State<ChooseGoalWidget> {
-  PageController pageViewController;
+  PageController? pageViewController;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -38,7 +37,7 @@ class _ChooseGoalWidgetState extends State<ChooseGoalWidget> {
                 child: Text(
                   'What is your goal ?',
                   style: FlutterFlowTheme.of(context).bodyText1.override(
-                        fontFamily: 'Poppins',
+                        fontFamily: '',
                         fontSize: 20,
                       ),
                 ),
@@ -52,7 +51,7 @@ class _ChooseGoalWidgetState extends State<ChooseGoalWidget> {
                   'It will help us to choose a best program for you',
                   textAlign: TextAlign.center,
                   style: FlutterFlowTheme.of(context).bodyText1.override(
-                        fontFamily: 'Poppins',
+                        fontFamily: '',
                         color: FlutterFlowTheme.of(context).secondaryText,
                         fontSize: 12,
                         fontWeight: FontWeight.normal,
@@ -126,7 +125,7 @@ class _ChooseGoalWidgetState extends State<ChooseGoalWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyText1
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        fontFamily: '',
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBackground,
                                       ),
@@ -151,7 +150,7 @@ class _ChooseGoalWidgetState extends State<ChooseGoalWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          fontFamily: '',
                                           color: Colors.white,
                                           fontSize: 12,
                                           fontWeight: FontWeight.normal,
@@ -210,7 +209,7 @@ class _ChooseGoalWidgetState extends State<ChooseGoalWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyText1
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        fontFamily: '',
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBackground,
                                       ),
@@ -235,7 +234,7 @@ class _ChooseGoalWidgetState extends State<ChooseGoalWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          fontFamily: '',
                                           color: Colors.white,
                                           fontSize: 12,
                                           fontWeight: FontWeight.normal,
@@ -294,7 +293,7 @@ class _ChooseGoalWidgetState extends State<ChooseGoalWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyText1
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        fontFamily: '',
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBackground,
                                       ),
@@ -319,7 +318,7 @@ class _ChooseGoalWidgetState extends State<ChooseGoalWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          fontFamily: '',
                                           color: Colors.white,
                                           fontSize: 12,
                                           fontWeight: FontWeight.normal,
@@ -339,16 +338,8 @@ class _ChooseGoalWidgetState extends State<ChooseGoalWidget> {
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 30),
                 child: FFButtonWidget(
-                  onPressed: () async {
-                    await Navigator.push(
-                      context,
-                      PageTransition(
-                        type: PageTransitionType.bottomToTop,
-                        duration: Duration(milliseconds: 300),
-                        reverseDuration: Duration(milliseconds: 300),
-                        child: WelcomeWidget(),
-                      ),
-                    );
+                  onPressed: () {
+                    print('Button pressed ...');
                   },
                   text: 'Get Started',
                   options: FFButtonOptions(
@@ -356,7 +347,7 @@ class _ChooseGoalWidgetState extends State<ChooseGoalWidget> {
                     height: 60,
                     color: FlutterFlowTheme.of(context).primaryColor,
                     textStyle: FlutterFlowTheme.of(context).subtitle2.override(
-                          fontFamily: 'Poppins',
+                          fontFamily: '',
                           color: Colors.white,
                         ),
                     elevation: 4,
@@ -364,7 +355,6 @@ class _ChooseGoalWidgetState extends State<ChooseGoalWidget> {
                       color: Colors.transparent,
                       width: 1,
                     ),
-                    borderRadius: 99,
                   ),
                   showLoadingIndicator: false,
                 ),

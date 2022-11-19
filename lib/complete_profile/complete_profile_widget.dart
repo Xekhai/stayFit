@@ -1,26 +1,23 @@
-import '../choose_goal/choose_goal_widget.dart';
 import '../flutter_flow/flutter_flow_drop_down.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CompleteProfileWidget extends StatefulWidget {
-  const CompleteProfileWidget({Key key}) : super(key: key);
+  const CompleteProfileWidget({Key? key}) : super(key: key);
 
   @override
   _CompleteProfileWidgetState createState() => _CompleteProfileWidgetState();
 }
 
 class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
-  DateTime datePicked;
-  String dropDownValue;
-  TextEditingController textController1;
-  TextEditingController textController2;
+  String? dropDownValue;
+  TextEditingController? textController1;
+  TextEditingController? textController2;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -28,6 +25,13 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
     super.initState();
     textController1 = TextEditingController();
     textController2 = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    textController1?.dispose();
+    textController2?.dispose();
+    super.dispose();
   }
 
   @override
@@ -60,7 +64,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                     child: Text(
                       'Lets Complete your profile',
                       style: FlutterFlowTheme.of(context).bodyText1.override(
-                            fontFamily: 'Poppins',
+                            fontFamily: '',
                             fontSize: 20,
                           ),
                     ),
@@ -68,7 +72,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                   Text(
                     'It will help us to know more about you!',
                     style: FlutterFlowTheme.of(context).bodyText1.override(
-                          fontFamily: 'Poppins',
+                          fontFamily: '',
                           fontSize: 12,
                           fontWeight: FontWeight.normal,
                         ),
@@ -94,16 +98,19 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                               size: 24,
                             ),
                           ),
-                          FlutterFlowDropDown(
-                            options: ['Male', 'Female', 'Something in-between ']
-                                .toList(),
+                          FlutterFlowDropDown<String>(
+                            options: [
+                              'Male',
+                              'Female',
+                              'Something in-between '
+                            ],
                             onChanged: (val) =>
                                 setState(() => dropDownValue = val),
                             width: MediaQuery.of(context).size.width * 0.7,
                             height: 50,
                             textStyle:
                                 FlutterFlowTheme.of(context).bodyText1.override(
-                                      fontFamily: 'Poppins',
+                                      fontFamily: '',
                                       color: Colors.black,
                                       fontWeight: FontWeight.normal,
                                     ),
@@ -129,47 +136,33 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                         color: Color(0xFFF2F2F2),
                         borderRadius: BorderRadius.circular(20),
                       ),
-                      child: InkWell(
-                        onTap: () async {
-                          await DatePicker.showDatePicker(
-                            context,
-                            showTitleActions: true,
-                            onConfirm: (date) {
-                              setState(() => datePicked = date);
-                            },
-                            currentTime: getCurrentTimestamp,
-                            minTime: getCurrentTimestamp,
-                          );
-                        },
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(20, 0, 10, 0),
-                              child: Icon(
-                                Icons.date_range_rounded,
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                size: 24,
-                              ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(20, 0, 10, 0),
+                            child: Icon(
+                              Icons.date_range_rounded,
+                              color: FlutterFlowTheme.of(context).secondaryText,
+                              size: 24,
                             ),
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(30, 15, 0, 15),
-                              child: Text(
-                                'Date of Birth',
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyText1
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      fontWeight: FontWeight.normal,
-                                    ),
-                              ),
+                          ),
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(30, 15, 0, 15),
+                            child: Text(
+                              'Date of Birth',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                    fontFamily: '',
+                                    fontWeight: FontWeight.normal,
+                                  ),
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
@@ -235,13 +228,35 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                             topRight: Radius.circular(4.0),
                                           ),
                                         ),
+                                        errorBorder: UnderlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: Color(0x00000000),
+                                            width: 1,
+                                          ),
+                                          borderRadius: const BorderRadius.only(
+                                            topLeft: Radius.circular(4.0),
+                                            topRight: Radius.circular(4.0),
+                                          ),
+                                        ),
+                                        focusedErrorBorder:
+                                            UnderlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: Color(0x00000000),
+                                            width: 1,
+                                          ),
+                                          borderRadius: const BorderRadius.only(
+                                            topLeft: Radius.circular(4.0),
+                                            topRight: Radius.circular(4.0),
+                                          ),
+                                        ),
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyText1
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            fontFamily: '',
                                             fontWeight: FontWeight.normal,
                                           ),
+                                      maxLines: null,
                                     ),
                                   ),
                                 ),
@@ -272,7 +287,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyText1
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        fontFamily: '',
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBackground,
                                       ),
@@ -346,13 +361,35 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                             topRight: Radius.circular(4.0),
                                           ),
                                         ),
+                                        errorBorder: UnderlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: Color(0x00000000),
+                                            width: 1,
+                                          ),
+                                          borderRadius: const BorderRadius.only(
+                                            topLeft: Radius.circular(4.0),
+                                            topRight: Radius.circular(4.0),
+                                          ),
+                                        ),
+                                        focusedErrorBorder:
+                                            UnderlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: Color(0x00000000),
+                                            width: 1,
+                                          ),
+                                          borderRadius: const BorderRadius.only(
+                                            topLeft: Radius.circular(4.0),
+                                            topRight: Radius.circular(4.0),
+                                          ),
+                                        ),
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyText1
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            fontFamily: '',
                                             fontWeight: FontWeight.normal,
                                           ),
+                                      maxLines: null,
                                       keyboardType: TextInputType.number,
                                     ),
                                   ),
@@ -384,7 +421,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyText1
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        fontFamily: '',
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBackground,
                                       ),
@@ -399,13 +436,8 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 30),
                     child: FFButtonWidget(
-                      onPressed: () async {
-                        await Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => ChooseGoalWidget(),
-                          ),
-                        );
+                      onPressed: () {
+                        print('Button pressed ...');
                       },
                       text: 'Next  >',
                       options: FFButtonOptions(
@@ -414,7 +446,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                         color: FlutterFlowTheme.of(context).primaryColor,
                         textStyle:
                             FlutterFlowTheme.of(context).subtitle2.override(
-                                  fontFamily: 'Poppins',
+                                  fontFamily: '',
                                   color: Colors.white,
                                 ),
                         elevation: 4,
@@ -422,7 +454,6 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                           color: Colors.transparent,
                           width: 1,
                         ),
-                        borderRadius: 99,
                       ),
                       showLoadingIndicator: false,
                     ),

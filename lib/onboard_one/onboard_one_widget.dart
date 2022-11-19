@@ -1,12 +1,11 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
-import '../onboard_two/onboard_two_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class OnboardOneWidget extends StatefulWidget {
-  const OnboardOneWidget({Key key}) : super(key: key);
+  const OnboardOneWidget({Key? key}) : super(key: key);
 
   @override
   _OnboardOneWidgetState createState() => _OnboardOneWidgetState();
@@ -21,16 +20,8 @@ class _OnboardOneWidgetState extends State<OnboardOneWidget> {
       key: scaffoldKey,
       backgroundColor: Color(0xFFF5F5F5),
       floatingActionButton: FloatingActionButton(
-        onPressed: () async {
-          await Navigator.push(
-            context,
-            PageTransition(
-              type: PageTransitionType.rightToLeft,
-              duration: Duration(milliseconds: 300),
-              reverseDuration: Duration(milliseconds: 300),
-              child: OnboardTwoWidget(),
-            ),
-          );
+        onPressed: () {
+          print('FloatingActionButton pressed ...');
         },
         backgroundColor: Colors.white,
         elevation: 8,
@@ -43,7 +34,7 @@ class _OnboardOneWidgetState extends State<OnboardOneWidget> {
             shape: BoxShape.rectangle,
             border: Border.all(
               color: FlutterFlowTheme.of(context).primaryColor,
-              width: 1,
+              width: 3,
             ),
           ),
           child: Container(
@@ -112,7 +103,7 @@ class _OnboardOneWidgetState extends State<OnboardOneWidget> {
                         'Don\'t worry if you have trouble determining your goals, We can help you determine your goals and track your goals',
                         textAlign: TextAlign.start,
                         style: FlutterFlowTheme.of(context).bodyText1.override(
-                              fontFamily: 'Poppins',
+                              fontFamily: '',
                               color: FlutterFlowTheme.of(context).secondaryText,
                               fontSize: 12,
                               fontWeight: FontWeight.normal,

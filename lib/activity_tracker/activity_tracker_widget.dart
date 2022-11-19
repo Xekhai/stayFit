@@ -1,5 +1,4 @@
 import '../flutter_flow/flutter_flow_drop_down.dart';
-import '../flutter_flow/flutter_flow_expanded_image_view.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -7,17 +6,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:page_transition/page_transition.dart';
 
 class ActivityTrackerWidget extends StatefulWidget {
-  const ActivityTrackerWidget({Key key}) : super(key: key);
+  const ActivityTrackerWidget({Key? key}) : super(key: key);
 
   @override
   _ActivityTrackerWidgetState createState() => _ActivityTrackerWidgetState();
 }
 
 class _ActivityTrackerWidgetState extends State<ActivityTrackerWidget> {
-  String dropDownValue;
+  String? dropDownValue;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -42,22 +40,17 @@ class _ActivityTrackerWidgetState extends State<ActivityTrackerWidget> {
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          InkWell(
-                            onTap: () async {
-                              Navigator.pop(context);
-                            },
-                            child: Container(
-                              width: 32,
-                              height: 32,
-                              decoration: BoxDecoration(
-                                color: Color(0xFFEEEEEE),
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              child: Icon(
-                                Icons.chevron_left_rounded,
-                                color: Colors.black,
-                                size: 24,
-                              ),
+                          Container(
+                            width: 32,
+                            height: 32,
+                            decoration: BoxDecoration(
+                              color: Color(0xFFEEEEEE),
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Icon(
+                              Icons.chevron_left_rounded,
+                              color: Colors.black,
+                              size: 24,
                             ),
                           ),
                           Text(
@@ -179,7 +172,7 @@ class _ActivityTrackerWidgetState extends State<ActivityTrackerWidget> {
                                                           context)
                                                       .bodyText1
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        fontFamily: '',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -192,7 +185,7 @@ class _ActivityTrackerWidgetState extends State<ActivityTrackerWidget> {
                                                           context)
                                                       .bodyText1
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        fontFamily: '',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -240,7 +233,7 @@ class _ActivityTrackerWidgetState extends State<ActivityTrackerWidget> {
                                                           context)
                                                       .bodyText1
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        fontFamily: '',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -253,7 +246,7 @@ class _ActivityTrackerWidgetState extends State<ActivityTrackerWidget> {
                                                           context)
                                                       .bodyText1
                                                       .override(
-                                                        fontFamily: 'Poppins',
+                                                        fontFamily: '',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -301,9 +294,9 @@ class _ActivityTrackerWidgetState extends State<ActivityTrackerWidget> {
                               ),
                               borderRadius: BorderRadius.circular(50),
                             ),
-                            child: FlutterFlowDropDown(
+                            child: FlutterFlowDropDown<String>(
                               initialOption: dropDownValue ??= 'Weekly',
-                              options: ['Weekly'].toList(),
+                              options: ['Weekly'],
                               onChanged: (val) =>
                                   setState(() => dropDownValue = val),
                               width: 76,
@@ -311,7 +304,7 @@ class _ActivityTrackerWidgetState extends State<ActivityTrackerWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .bodyText1
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    fontFamily: '',
                                     color: Colors.white,
                                     fontWeight: FontWeight.normal,
                                   ),
@@ -344,36 +337,13 @@ class _ActivityTrackerWidgetState extends State<ActivityTrackerWidget> {
                               color: Colors.white,
                             ),
                           ),
-                          child: InkWell(
-                            onTap: () async {
-                              await Navigator.push(
-                                context,
-                                PageTransition(
-                                  type: PageTransitionType.fade,
-                                  child: FlutterFlowExpandedImageView(
-                                    image: Image.asset(
-                                      'assets/images/Graph.png',
-                                      fit: BoxFit.contain,
-                                    ),
-                                    allowRotation: false,
-                                    tag: 'imageTag3',
-                                    useHeroAnimation: true,
-                                  ),
-                                ),
-                              );
-                            },
-                            child: Hero(
-                              tag: 'imageTag3',
-                              transitionOnUserGestures: true,
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(20),
-                                child: Image.asset(
-                                  'assets/images/Graph.png',
-                                  width: double.infinity,
-                                  height: 200,
-                                  fit: BoxFit.fill,
-                                ),
-                              ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20),
+                            child: Image.asset(
+                              'assets/images/Graph.png',
+                              width: double.infinity,
+                              height: 200,
+                              fit: BoxFit.fill,
                             ),
                           ),
                         ),
@@ -450,7 +420,7 @@ class _ActivityTrackerWidgetState extends State<ActivityTrackerWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyText1
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              fontFamily: '',
                                               fontWeight: FontWeight.normal,
                                             ),
                                       ),
@@ -459,7 +429,7 @@ class _ActivityTrackerWidgetState extends State<ActivityTrackerWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyText2
                                             .override(
-                                              fontFamily: 'Poppins',
+                                              fontFamily: '',
                                               fontSize: 12,
                                               fontWeight: FontWeight.normal,
                                             ),
@@ -541,7 +511,7 @@ class _ActivityTrackerWidgetState extends State<ActivityTrackerWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyText1
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                fontFamily: '',
                                                 fontWeight: FontWeight.normal,
                                               ),
                                         ),
@@ -550,7 +520,7 @@ class _ActivityTrackerWidgetState extends State<ActivityTrackerWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyText2
                                               .override(
-                                                fontFamily: 'Poppins',
+                                                fontFamily: '',
                                                 fontSize: 12,
                                                 fontWeight: FontWeight.normal,
                                               ),

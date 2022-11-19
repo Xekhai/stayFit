@@ -1,29 +1,35 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 
 class FlutterFlowCheckboxGroup extends StatefulWidget {
   const FlutterFlowCheckboxGroup({
     this.initiallySelected,
-    @required this.options,
-    @required this.onChanged,
-    this.textStyle,
+    required this.options,
+    required this.onChanged,
+    required this.textStyle,
     this.labelPadding,
     this.itemPadding,
-    this.activeColor,
-    this.checkColor,
+    required this.activeColor,
+    required this.checkColor,
     this.checkboxBorderRadius,
-    this.checkboxBorderColor,
+    required this.checkboxBorderColor,
+    this.initialized = true,
+    this.selectedValuesVariable,
   });
 
-  final List<String> initiallySelected;
+  final List<String>? initiallySelected;
   final List<String> options;
   final void Function(List<String>) onChanged;
   final TextStyle textStyle;
-  final EdgeInsetsGeometry labelPadding;
-  final EdgeInsetsGeometry itemPadding;
+  final EdgeInsetsGeometry? labelPadding;
+  final EdgeInsetsGeometry? itemPadding;
   final Color activeColor;
   final Color checkColor;
-  final BorderRadius checkboxBorderRadius;
+  final BorderRadius? checkboxBorderRadius;
   final Color checkboxBorderColor;
+  final bool initialized;
+  final ValueNotifier<List<String>?>? selectedValuesVariable;
 
   @override
   State<FlutterFlowCheckboxGroup> createState() =>
@@ -31,12 +37,33 @@ class FlutterFlowCheckboxGroup extends StatefulWidget {
 }
 
 class _FlutterFlowCheckboxGroupState extends State<FlutterFlowCheckboxGroup> {
-  List<String> checkboxValues;
+  late List<String> checkboxValues;
+  ValueListenable<List<String>?>? get changeSelectedValues =>
+      widget.selectedValuesVariable;
+  List<String>? get selectedValues => widget.selectedValuesVariable?.value;
 
   @override
   void initState() {
     super.initState();
     checkboxValues = widget.initiallySelected ?? [];
+    if (!widget.initialized && checkboxValues.isNotEmpty) {
+      SchedulerBinding.instance.addPostFrameCallback(
+        (_) => widget.onChanged(checkboxValues),
+      );
+    }
+    changeSelectedValues?.addListener(() {
+      if (widget.selectedValuesVariable != null &&
+          selectedValues != null &&
+          checkboxValues != selectedValues) {
+        setState(() => checkboxValues = List.from(selectedValues!));
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    changeSelectedValues?.removeListener(() {});
+    super.dispose();
   }
 
   @override
@@ -55,6 +82,9 @@ class _FlutterFlowCheckboxGroupState extends State<FlutterFlowCheckboxGroup> {
                   Checkbox(
                     value: selected,
                     onChanged: (isSelected) {
+                      if (isSelected == null) {
+                        return;
+                      }
                       isSelected
                           ? checkboxValues.add(option)
                           : checkboxValues.remove(option);
